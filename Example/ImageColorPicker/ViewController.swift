@@ -15,10 +15,12 @@ class ViewController: UIViewController {
       colorPicker.setImage(imageView.image)
     }
   }
+  @IBOutlet weak var pointLabel: UILabel!
   private let colorPicker = ImageColorPicker()
   
   override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
     var point = touches.first!.locationInView(imageView)
     view.backgroundColor = colorPicker.pick(&point)
+    pointLabel.text = String(point)
   }
 }

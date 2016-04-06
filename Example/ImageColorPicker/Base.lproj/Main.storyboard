@@ -20,15 +20,24 @@
                             <imageView userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lena" translatesAutoresizingMaskIntoConstraints="NO" id="QrN-3I-OBO">
                                 <rect key="frame" x="200" y="200" width="200" height="200"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEw-V6-iBt">
+                                <rect key="frame" x="0.0" y="20" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QrN-3I-OBO" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="Cyd-uQ-ekB"/>
+                            <constraint firstItem="oEw-V6-iBt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="GuI-o8-7gd"/>
                             <constraint firstItem="QrN-3I-OBO" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Wyu-vz-NgF"/>
+                            <constraint firstItem="oEw-V6-iBt" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="cgf-Ti-AkD"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="QrN-3I-OBO" id="abV-Zk-Ir2"/>
+                        <outlet property="pointLabel" destination="oEw-V6-iBt" id="8dU-Id-5vx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

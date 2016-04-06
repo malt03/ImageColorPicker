@@ -1,0 +1,6 @@
+framework module ImageColorPicker {
+  umbrella header "ImageColorPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

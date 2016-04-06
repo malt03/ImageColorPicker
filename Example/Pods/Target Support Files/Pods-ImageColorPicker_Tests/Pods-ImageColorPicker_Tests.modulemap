@@ -1,0 +1,6 @@
+framework module Pods_ImageColorPicker_Tests {
+  umbrella header "Pods-ImageColorPicker_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,14 @@
+PODS:
+  - ImageColorPicker (0.1.0)
+
+DEPENDENCIES:
+  - ImageColorPicker (from `../`)
+
+EXTERNAL SOURCES:
+  ImageColorPicker:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ImageColorPicker: 2aef6ace709136aa683f9c3ebea11c94130c9edb
+
+COCOAPODS: 0.39.0

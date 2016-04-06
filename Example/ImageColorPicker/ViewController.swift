@@ -7,18 +7,18 @@
 //
 
 import UIKit
+import ImageColorPicker
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+  @IBOutlet weak var imageView: UIImageView! {
+    didSet {
+      colorPicker.setImage(imageView.image)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+  }
+  private let colorPicker = ImageColorPicker()
+  
+  override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    var point = touches.first!.locationInView(imageView)
+    view.backgroundColor = colorPicker.pick(&point)
+  }
 }
-

@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.summary          = "Easy to pick a color from UIImage."
 
   s.description      = <<-DESC
-You can pick colors from UIImage.
+You can pick a color from UIImage and CGPoint.
                        DESC
 
   s.homepage         = "https://github.com/malt03/ImageColorPicker"

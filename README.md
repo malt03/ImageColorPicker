@@ -13,7 +13,7 @@
 let colorPicker = ImageColorPicker(image: i)
 ```
 
-### Use
+### Pick
 ```swift
 colorPicker.pick(&point)
 ```

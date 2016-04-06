@@ -1,17 +1,33 @@
 # ImageColorPicker
 
-[![CI Status](http://img.shields.io/travis/Koji Murata/ImageColorPicker.svg?style=flat)](https://travis-ci.org/Koji Murata/ImageColorPicker)
-[![Version](https://img.shields.io/cocoapods/v/ImageColorPicker.svg?style=flat)](http://cocoapods.org/pods/ImageColorPicker)
-[![License](https://img.shields.io/cocoapods/l/ImageColorPicker.svg?style=flat)](http://cocoapods.org/pods/ImageColorPicker)
 [![Platform](https://img.shields.io/cocoapods/p/ImageColorPicker.svg?style=flat)](http://cocoapods.org/pods/ImageColorPicker)
+![Language](https://img.shields.io/badge/language-Swift%202.3-orange.svg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?ImageColorPickerstyle=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods](https://img.shields.io/cocoapods/v/ImageColorPicker.svg?style=flat)](http://cocoapods.org/pods/ImageColorPicker)
+![License](https://img.shields.io/github/license/malt03/ImageColorPicker.svg?style=flat)
 
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+### Initialize
+```swift
+let colorPicker = ImageColorPicker(image: i)
+```
 
-## Requirements
+### Use
+```swift
+colorPicker.pick(&point)
+```
 
-## Installation
+## Installation via Carthage
+
+ImageColorPicker is available through [Carthage](https://github.com/Carthage/Carthage). To install
+it, simply add the following line to your Cartfile:
+
+```ruby
+github "malt03/ImageColorPicker"
+```
+
+## Installation via CocoaPods
 
 ImageColorPicker is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
@@ -22,7 +38,7 @@ pod "ImageColorPicker"
 
 ## Author
 
-Koji Murata, koji.murata@dena.com
+Koji Murata, malt.koji@gmail.com
 
 ## License
 

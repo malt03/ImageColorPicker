@@ -24,7 +24,4 @@ You can pick a color from UIImage and CGPoint.
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'ImageColorPicker' => ['Pod/Assets/*.png']
-  }
 end

@@ -18,9 +18,9 @@ class ViewController: UIViewController {
   @IBOutlet weak var pointLabel: UILabel!
   private let colorPicker = ImageColorPicker()
   
-  override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-    var point = touches.first!.locationInView(imageView)
+  override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    var point = touches.first!.location(in: imageView)
     view.backgroundColor = colorPicker.pick(&point)
-    pointLabel.text = String(point)
+    pointLabel.text = String(describing: point)
   }
 }

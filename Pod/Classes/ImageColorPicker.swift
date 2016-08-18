@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class ImageColorPicker {
+open class ImageColorPicker {
   private var pickerBytesPerRow: Int?
   private var pickerWidth: Int?
   private var pickerHeight: Int?
@@ -28,42 +28,42 @@ public class ImageColorPicker {
   
   deinit {
     guard let buffer = pickerPixelBuffer,
-      width = pickerWidth,
-      height = pickerHeight else { return }
-    buffer.dealloc(width * height * 4)
+      let width = pickerWidth,
+      let height = pickerHeight else { return }
+    buffer.deallocate(capacity: width * height * 4)
   }
   
-  public func setImage(image: UIImage?) {
+  open func setImage(_ image: UIImage?) {
     guard let i = image else {
       return
     }
     
-    if let buffer = pickerPixelBuffer, width = pickerWidth, height = pickerHeight {
-      buffer.dealloc(width * height * 4)
+    if let buffer = pickerPixelBuffer, let width = pickerWidth, let height = pickerHeight {
+      buffer.deallocate(capacity: width * height * 4)
     }
     
-    let imageRef = i.CGImage
-    let width = CGImageGetWidth(imageRef)
-    let height = CGImageGetHeight(imageRef)
+    let imageRef = i.cgImage!
+    let width = imageRef.width
+    let height = imageRef.height
     pickerWidth = width
     pickerHeight = height
     pickerImageCoefficient = Int(CGFloat(pickerWidth!) / i.size.width)
     pickerBytesPerRow = pickerWidth! * 4
     
-    pickerPixelBuffer = UnsafeMutablePointer<UInt8>.alloc(width * height * 4)
+    pickerPixelBuffer = UnsafeMutablePointer<UInt8>.allocate(capacity: width * height * 4)
     let colorSpace = CGColorSpaceCreateDeviceRGB()
-    let option = CGBitmapInfo.ByteOrder32Little.rawValue | CGImageAlphaInfo.PremultipliedLast.rawValue
-    let context = CGBitmapContextCreate(pickerPixelBuffer!, width, height, 8, width * 4, colorSpace, option)
-    CGContextSetBlendMode(context, .Copy)
-    CGContextDrawImage(context, CGRect(origin: .zero, size: CGSize(width: width, height: height)), imageRef)
+    let option = CGBitmapInfo.byteOrder32Little.rawValue | CGImageAlphaInfo.premultipliedLast.rawValue
+    let context = CGContext(data: pickerPixelBuffer!, width: width, height: height, bitsPerComponent: 8, bytesPerRow: width * 4, space: colorSpace, bitmapInfo: option)!
+    context.setBlendMode(.copy)
+    context.draw(imageRef, in: CGRect(origin: .zero, size: CGSize(width: width, height: height)))
   }
   
-  public func pick(inout point: CGPoint) -> UIColor? {
+  open func pick(_ point: inout CGPoint) -> UIColor? {
     guard let buffer = pickerPixelBuffer,
-      coefficient = pickerImageCoefficient,
-      bytesPerRow = pickerBytesPerRow,
-      width = pickerWidth,
-      height = pickerHeight else { return nil }
+      let coefficient = pickerImageCoefficient,
+      let bytesPerRow = pickerBytesPerRow,
+      let width = pickerWidth,
+      let height = pickerHeight else { return nil }
     var x = Int(point.x) * coefficient
     var y = Int(point.y) * coefficient
     

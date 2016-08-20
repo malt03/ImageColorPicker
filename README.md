@@ -1,7 +1,7 @@
 # ImageColorPicker
 
 [![Platform](https://img.shields.io/cocoapods/p/ImageColorPicker.svg?style=flat)](http://cocoapods.org/pods/ImageColorPicker)
-![Language](https://img.shields.io/badge/language-Swift%202.2-orange.svg)
+![Language](https://img.shields.io/badge/language-Swift%203.0-orange.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?ImageColorPickerstyle=flat)](https://github.com/Carthage/Carthage)
 [![CocoaPods](https://img.shields.io/cocoapods/v/ImageColorPicker.svg?style=flat)](http://cocoapods.org/pods/ImageColorPicker)
 ![License](https://img.shields.io/github/license/malt03/ImageColorPicker.svg?style=flat)
